@@ -33,20 +33,21 @@ let quotes = [
       year: "2015"
     }
     ];
-  //Tested array in console--objects in array are working
+
+//Tested array in console--objects in array are working
 console.log(quotes);
 
-/***Created getRandomQuote function. Created a random number to select a random object from the array and return  a quote.
-returning quotes variable displays quote array with the random fuction created. ***/
+/*** Created getRandomQuote function. Created a random number to select a random object from the array and return  a quote.
+returning quotes variable displays quote array with the random fucntion created. ***/
 
 function getRandomQuote () {
-  let randomNumber = Math.floor(Math.random() * quotes.length);
-  return quotes[randomNumber];
-}
-//tested the getRandomQuote funciton to see if I am pulling a random quote; was pulling a random number vs quote, corrected.
-console.log(getRandomQuote());
-
-/***Created a printQuote function. Stored the getRandomQuote variable in the function and created a variable 
+    let randomNumber = Math.floor(Math.random() * quotes.length);
+    return quotes[randomNumber];
+  };
+  //tested the getRandomQuote funciton to see if I am pulling a random quote; was pulling a random number vs quote, corrected.
+  console.log(getRandomQuote());
+  
+  /***Created a printQuote function. Stored the getRandomQuote variable in the function and created a variable 
 to store the HTML string for the quote and source, add conditional statements for year and citation properties. 
 Set innerHTML property with the 'quote-box' div to equal the HTML string. ***/
 
@@ -54,7 +55,7 @@ function printQuote () {
       let printRandomQuote = getRandomQuote ();
       let quoteMessage = ' '; //HTML settings variable named quoteMessage
       //Fixed printRandomQuote.quote HTML string by adding correct spaces, adding the + to concatenate
-      quoteMessage += '<p class="quote">' +printRandomQuote.quote+ '</p><p class="source">'+printRandomQuote.source;
+      quoteMessage += '<p class="quote">' +printRandomQuote.quote+ '</p><p class="source">' +printRandomQuote.source;
      //note: dot notation for each property in the objects is object.quote, object.source; object.year, and object.citation.
   
      //Visual appeal is for the citation to come before the year, switched order code pulls citation and year.
@@ -70,52 +71,18 @@ function printQuote () {
     
     console.log(quoteMessage); 
   
-
-/*** 
-  Create the array of quote objects and name it `quotes`.
-  Add at least five quote objects to the `quotes` array.
-  Give each quote object a `quote` and `source` property.
-  Add the `citation` property to at least one object in the array.
-  Add the `year` property to at least one object in the array.
-  Use console.log() to log your array of quotes to the console.
-***/
+//set the inner HTML by targeting the div with JS
+  document.getElementById('quote-box').innerHTML = quoteMessage;
 
 
+//correctly closed printQuote function and console.log(quoteMessage) works with quote button; still an issue with printRandomQuote
+};
+printQuote();
 
-
-/***
-  Create the `getRandomQuote` function to:
-   - Create a variable to store a random number 
-   - Cse the random number to `return` a random quote object from the `quotes` array.
-***/
-
-
-
-
-/***
-  Create the `printQuote` function to: 
-   - Call the `getRandomQuote` function and assign it to a variable.
-   - Create a variable for the HTML string and set it equal to an empty string.
-   - Use the HTML template in the instructions or the markup in the index.html file, AND 
-     the random quote vairable to build your HTML string.
-   - Add the quote and source section to the HTML string.
-   - Use an if statement to check for the citation property before adding it to the HTML string.
-   - Use an if statement to check for the year property before adding it to the HTML string.
-   - Don't forget to close that final `p` tag.
-   - Set the `innerHTML` of the `quote-box` div to the HTML string. 
-***/
-
-
-
-
-/***
-  When the "Show another quote" button is clicked, the event listener 
-  below will be triggered, and it will call, or "invoke", the `printQuote` 
-  function. So do not make any changes to the line of code below this 
-  comment.
-***/
+/***The included code below is triggered when a site user clicks "Show another Quote" button.
+the event listener calls the 'prinitQuote' function created. ***/
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
+// deleted original comments.
