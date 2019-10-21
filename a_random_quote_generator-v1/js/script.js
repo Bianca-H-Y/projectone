@@ -7,8 +7,8 @@ project 1 - A Random Quote Generator
 
 let quotes = [
     {
-      quote: "I am learning all the time. The tombstone will be my diploma.",
-      source: "Eartha Kitt",
+      quote: "I am learning all the time. The tombstone will be my diploma.", 
+      source: "Eartha Kitt", 
       occupation: "Actor"
     },
     {
@@ -42,7 +42,7 @@ let quotes = [
     ];
     
   //Tested array in console--objects in array are working
-  console.log(quotes);
+    console.log(quotes);
   
   /***Created getRandomQuote function. Created a random number to select a random object from the array and return  a quote.
   returning quotes variable displays quote array with the random fuction created. ***/
@@ -50,7 +50,7 @@ let quotes = [
   function getRandomQuote () {
     let randomNumber = Math.floor(Math.random() * quotes.length);
     return quotes[randomNumber];
-  }
+  };
   //tested the getRandomQuote funciton to see if I am pulling a random quote; was pulling a random number vs quote, corrected.
   console.log(getRandomQuote());
   
@@ -66,15 +66,15 @@ let quotes = [
      //note: dot notation for each property in the objects is object.quote, object.source; object.year, and object.citation.
   
      //Visual appeal is for the citation to come before the year, switched order code pulls citation and year.
-  if(printRandomQuote.citation) {
+    if(printRandomQuote.citation) {
     quoteMessage += '<span class="citation">' +printRandomQuote.citation+ '</span>';
    }
   
-  if(printRandomQuote.year) {
+    if(printRandomQuote.year) {
       quoteMessage += '<span class="year">' +printRandomQuote.year+ '</span>';
      }
   //for exceedes adding conditional statement to include occupation in last position of format.
-  if(printRandomQuote.occupation) {
+    if(printRandomQuote.occupation) {
       quoteMessage += '<span class="year">' +printRandomQuote.occupation+ '</span>';
      }
   // closed quoteMessage call <p></p>
@@ -85,7 +85,7 @@ let quotes = [
   //set the inner HTML by targeting the div with JS
   document.getElementById('quote-box').innerHTML = quoteMessage;
   //correctly closed printQuote function and console.log(quoteMessage) works with quote button; still an issue with printRandomQuote
-  } 
+  };
   printQuote();
   
   //For exceeds added 20,000 miliseconds or 20 second timer to the printQuote function.
