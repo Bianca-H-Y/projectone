@@ -60,7 +60,7 @@ let quotes = [
   
   function printQuote () {
       let printRandomQuote = getRandomQuote ();
-      let quoteMessage = ' '; //HTML settings variable named quoteMessage
+      let quoteMessage = ''; //HTML settings variable named quoteMessage
       //Fixed printRandomQuote.quote HTML string by adding correct spaces, adding the + to concatenate
       quoteMessage += '<p class="quote">' +printRandomQuote.quote+ '</p><p class="source">'+printRandomQuote.source;
      //note: dot notation for each property in the objects is object.quote, object.source; object.year, and object.citation.
@@ -75,7 +75,7 @@ let quotes = [
      }
   //for exceedes adding conditional statement to include occupation in last position of format.
     if(printRandomQuote.occupation) {
-      quoteMessage += '<span class="year">' +printRandomQuote.occupation+ '</span>';
+      quoteMessage += '<span class="occupation">' +printRandomQuote.occupation+ '</span>';
      }
   // closed quoteMessage call <p></p>
       quoteMessage += '</p>';
