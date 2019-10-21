@@ -46,6 +46,30 @@ function getRandomQuote () {
 //tested the getRandomQuote funciton to see if I am pulling a random quote; was pulling a random number vs quote, corrected.
 console.log(getRandomQuote());
 
+/***Created a printQuote function. Stored the getRandomQuote variable in the function and created a variable 
+to store the HTML string for the quote and source, add conditional statements for year and citation properties. 
+Set innerHTML property with the 'quote-box' div to equal the HTML string. ***/
+
+function printQuote () {
+      let printRandomQuote = getRandomQuote ();
+      let quoteMessage = ' '; //HTML settings variable named quoteMessage
+      //Fixed printRandomQuote.quote HTML string by adding correct spaces, adding the + to concatenate
+      quoteMessage += '<p class="quote">' +printRandomQuote.quote+ '</p><p class="source">'+printRandomQuote.source;
+     //note: dot notation for each property in the objects is object.quote, object.source; object.year, and object.citation.
+  
+     //Visual appeal is for the citation to come before the year, switched order code pulls citation and year.
+  if(printRandomQuote.citation) {
+    quoteMessage += '<span class="citation">' +printRandomQuote.citation+ '</span>';
+   }
+  
+  if(printRandomQuote.year) {
+      quoteMessage += '<span class="year">' +printRandomQuote.year+ '</span>';
+     }
+  // closed quoteMessage call <p></p>
+      quoteMessage += '</p>';
+    
+    console.log(quoteMessage); 
+  
 
 /*** 
   Create the array of quote objects and name it `quotes`.
