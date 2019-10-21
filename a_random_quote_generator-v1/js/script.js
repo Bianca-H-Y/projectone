@@ -4,7 +4,36 @@ project 1 - A Random Quote Generator
 ******************************************/
 
 // Study guide for this project - https://drive.google.com/file/d/1s5grutGuQFwJcQP8bFwEI69Q8FCkGdDk/view?usp=sharing
-
+let quotes = [
+    {
+      quote: "I am learning all the time. The tombstone will be my diploma.",
+      source: "Eartha Kitt"
+    },
+    {
+      quote: "Understand that the right to choose your own path is a sacred privilege. Use it. Dwell in possibility.",
+      source: "Oprah Winfrey"
+    },
+    {
+      quote: "One press account said I was an overnight success. I thought that was the longest night I’ve ever spent.",
+      source: "Sandra Cisneros",
+      citation: "Chicago Tribune",
+      year: "1992"
+    },
+    {
+      quote: "I’m just enjoying my life. I suggest you try it.",
+      source: "Tyler Perry"
+    },
+    {
+      quote: "I'm not afriad of storms, for I'm learning how to sail my ship.",
+      source: "Louisa May Alcott"
+    },
+    {
+      quote: "She wasn’t waiting for a knight, she was waiting for a sword.",
+      source: "Atticus",
+      year: "2015"
+    }
+    ];
+  
 
 /*** 
   Create the array of quote objects and name it `quotes`.
