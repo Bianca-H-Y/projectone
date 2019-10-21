@@ -55,7 +55,7 @@ function printQuote () {
       let printRandomQuote = getRandomQuote ();
       let quoteMessage = ' '; //HTML settings variable named quoteMessage
       //Fixed printRandomQuote.quote HTML string by adding correct spaces, adding the + to concatenate
-      quoteMessage += '<p class="quote">' +printRandomQuote.quote+ '</p><p class="source">' +printRandomQuote.source;
+      quoteMessage += '<p class="quote">' +printRandomQuote.quote+ '</p> <p class="source">' +printRandomQuote.source;
      //note: dot notation for each property in the objects is object.quote, object.source; object.year, and object.citation.
   
      //Visual appeal is for the citation to come before the year, switched order code pulls citation and year.
