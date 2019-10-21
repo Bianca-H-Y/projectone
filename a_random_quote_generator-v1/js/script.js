@@ -33,7 +33,19 @@ let quotes = [
       year: "2015"
     }
     ];
-  
+  //Tested array in console--objects in array are working
+console.log(quotes);
+
+/***Created getRandomQuote function. Created a random number to select a random object from the array and return  a quote.
+returning quotes variable displays quote array with the random fuction created. ***/
+
+function getRandomQuote () {
+  let randomNumber = Math.floor(Math.random() * quotes.length);
+  return quotes[randomNumber];
+}
+//tested the getRandomQuote funciton to see if I am pulling a random quote; was pulling a random number vs quote, corrected.
+console.log(getRandomQuote());
+
 
 /*** 
   Create the array of quote objects and name it `quotes`.
