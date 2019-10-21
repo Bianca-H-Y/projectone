@@ -40,3 +40,52 @@
  ];
  //Tesed array in console--objects in array are working.
  console.log(quotes);
+
+ /***Created getRandomQuote function. Created a randomm number to select a random object from the array 
+  * and return a quote. Returning quptes variable displays array with the random function created  */
+function getRandomQuote () {
+  let randomNumber = Math.floor(Math.random() * quotes.length);
+  return quotes[randomNumber];
+}
+//testing getRandomQuote function to see if I am pulling a quote versus a number of the objects in the array.//
+console.log(getRandomQuote());
+
+/***Created a printQuote function. Stored the getRandomQuote variable in the function and created a variable to store the HTML strong for the quote and source,
+ * added conditional statements for year, citation, and occupation properties.***/
+function printQuote () {
+  let printRandomQuote = getRandomQuote ();
+  let quoteMessage = '';
+  //note: dot notation for each property in the objects is object.quote, object.soruce, object.year, object.citation, and object.occupation.//
+  quoteMessage += '<p class="quote">'+printRandomQuote.quote+ '</p><p class="source">' + printRandomQuote.source;
+  
+  //more appealing to have citation listed before the year, switched order code.//
+  
+  //condition statement to attach citation if included in object.//
+  if(printRandomQuote.citation) {
+    quoteMessage += '<span class="citation">' +printRandomQuote.citation+ '</span>';
+  }
+  //conditional statement to attach year if included on object.//
+  if(printRandomQuote.year){
+    quoteMessage += '<span class="year">' +printRandomQuote.citaion+ '</span>';
+  }
+
+  //Conditional statement to  attach occupation is included on object.//
+  if(printRandomQuote.occupation){
+    quoteMessage += '<span class="occupation">' +printRandomQuote.occupation+ '</span>';
+  }
+  //closed quoteMessage call <p></p>
+    quoteMessage += '</p>';
+
+  //Testing quoteMessage with console.//
+    console.log(quoteMessage);
+
+  //Set the inner html by targetting the div with JS//
+  document.getElementById('quote-box').innerHTML = quoteMessage;
+}
+printQuote();
+
+//Added a timer to auto change quotes in 20,00 miliseconds or 20 second timer.
+setInterval(printQuote, 20000);
+
+//Included code to trigger changing quote when the button is clicked.//
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
