@@ -66,12 +66,12 @@ function printQuote () {
   }
   //conditional statement to attach year if included on object.//
   if(printRandomQuote.year){
-    quoteMessage += '<span class="year">' +printRandomQuote.citaion+ '</span>';
+    quoteMessage += '<span class="year">' +printRandomQuote.year+ '</span>';
   }
 
   //Conditional statement to  attach occupation is included on object.//
   if(printRandomQuote.occupation){
-    quoteMessage += '<span class="occupation">' +printRandomQuote.occupation+ '</span>';
+    quoteMessage += ", "+ '<span class="occupation">' +printRandomQuote.occupation+ '</span>';
   }
   //closed quoteMessage call <p></p>
     quoteMessage += '</p>';
